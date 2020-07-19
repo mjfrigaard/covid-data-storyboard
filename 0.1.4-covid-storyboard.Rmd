@@ -1,5 +1,5 @@
 ---
-title: "COVID-19 Data: an (unofficial) timeline"
+title: "COVID-19 Data: an (unofficial) timeline and some resources"
 output: 
   flexdashboard::flex_dashboard:
     storyboard: true
