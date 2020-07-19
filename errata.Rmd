@@ -1,0 +1,73 @@
+
+### Checking your COVID-19 data: the `skimr` package
+
+#### We use the [`skimr`](https://docs.ropensci.org/skimr/) package to get a quick high-level view of some summary statistics across the entire dataset. `skimr` is especially helpful are the tiny histograms for continuous variables and the `complete_rate`
+
+The `skimr` [package documentation](https://docs.ropensci.org/skimr/):
+
+I like it because:
+
+- It handles grouped data 
+
+- It's output is plain text, so prints to console  
+
+- It can be modified to add/remove summary statistics    
+
+- `skimr` works in `knitr`/`rmarkdown` documents and `shiny` apps  
+
+- `skimr` also has an abbreviated output when combined with `summary()` function 
+
+***
+
+### Examine responses with [`inspectdf::inspect_cat()`](https://alastairrushworth.github.io/inspectdf/) 
+
+#### Check responses to categorical variables with `inspectdf::inspect_cat()` 
+
+`covus` has a `data_quality_grade` variable that tells us a little about what to expect from each measurement. We can add `inspectdf::show_plot(text_labels = TRUE)` to see what the responses are.
+
+```{r inspect_cat}
+inspectdf::inspect_cat(df1 = select(covus, data_quality_grade)) %>% 
+      inspectdf::show_plot(text_labels = TRUE, 
+                       col_palette = 3)
+```
+
+
+- Check the [`covdata` package website](https://kjhealy.github.io/covdata/articles/covdata.html#exploring-the-data-1) for vignettes to explore the various data sources  
+
+***
+
+
+### covdata: compare datasets with [`inspectdf::inspect_na()`](https://alastairrushworth.github.io/inspectdf/) 
+
+#### Compare the missing values in two datasets with `inspectdf::inspect_na()`
+
+`covdata` contains two NYT datasets, the `nytcovcounty` and `nytcovstate` datasets,   
+
+1. **`nytcovcounty`** = `NYT COVID-19 data for US counties, current as of Friday, July 17, 2020`    
+2. **`nytcovstate`** = `NYT COVID-19 data for the US states, current as of Friday, July 17, 2020`
+
+```{r inspect_types, echo=TRUE}
+inspectdf::inspect_na(df1 = nytcovcounty,  
+                      df2 = nytcovstate) %>% 
+    inspectdf::show_plot(text_labels = TRUE, 
+                       col_palette = 4)
+```
+
+***
+
+### Check for missing data with [`visdat::vis_miss()`](https://visdat.njtierney.com/)
+
+#### The `visdat::vis_miss()` visualization shows us where the missing data are in the `covid19us` dataset
+
+Some of the data in these packages are missing, so I always make sure to check for missing patterns before doing any modeling. The description for the `covid19us` data tells us its *Open Source data from COVID Tracking Project on the distribution of Covid-19 cases and deaths in the US. For more, see https://github.com/opencovid19-fr/data* 
+
+The `warn_large_data = FALSE` is necessary because of the number of observations.
+
+```{r vis_miss-covid19us, warning=FALSE, message=FALSE}
+visdat::vis_miss(covid19us, warn_large_data = FALSE) 
+```
+
+- Check out the entire [`visdat` vignette here](https://cran.r-project.org/web/packages/visdat/vignettes/using_visdat.html) for more info on how to use it
+
+- Read the extensive `covid19R` documentation [here](https://covid19r.github.io/documentation/), written in `bookdown`
+
