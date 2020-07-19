@@ -148,23 +148,13 @@ covid19us <- covid19R::get_covid19_dataset(dataset = "covid19us")
 ![](figs/COVID-19-storyboard-headlines-02.png){width=100%}
  
 
-#### Media/Journalism outlets begin collecting data. 'Excess/missing deaths' are also tracked by [New York Times](https://www.nytimes.com/interactive/2020/04/21/world/coronavirus-missing-deaths.html) and [The Economist](https://www.economist.com/graphic-detail/2020/07/15/tracking-covid-19-excess-deaths-across-countries). 
+#### Media/Journalism outlets begin collecting data:
 
-#### The Atlantic's [COVID tracking project](https://covidtracking.com/about) actually started in March, but projects are updated daily or weekly. 
+##### 'Missing deaths' are tracked by [New York Times](https://www.nytimes.com/interactive/2020/04/21/world/coronavirus-missing-deaths.html) 
 
-***
+##### 'Excess deaths' are tracked by [The Economist](https://www.economist.com/graphic-detail/2020/07/15/tracking-covid-19-excess-deaths-across-countries). 
 
-### Where are the data now?
-
-#### Johns Hopkins' Center for Systems Science and Engineering, The New York Times, The Atlantic, and The Economist each begin collecting and sharing data. All data sources are available on Github as `.csv`/`.tsv` files, or for direct download
-
-![](figs/COVID-19-storyboard-github.png){width=70%}
-
- - Johns Hopkins' Center for Systems Science and Engineering (CSSE) [COVID-19 Data Repository](https://github.com/CSSEGISandData/COVID-19) compiles many of the data sources in the R packages
-
- - The New York Times and The Economist each created their own COVID-19 data tracking systems, and each have their respective data repository ([NYT](https://github.com/nytimes/covid-19-data) and [TheEconomist](https://github.com/TheEconomist/covid-19-excess-deaths-tracker)).
-
- - The Atlantic create [The COVID tracking project](https://covidtracking.com/data) in March with datasets for direct download.
+##### The Atlantic's [COVID tracking project](https://covidtracking.com/about) actually started in March, but projects are updated daily or weekly. 
 
 ***
 
@@ -172,10 +162,13 @@ covid19us <- covid19R::get_covid19_dataset(dataset = "covid19us")
 
 #### R ([the programming language and free software environment](https://en.wikipedia.org/wiki/R_(programming_language)) for statistical computing and graphics), has a global network of users who created numerous packages for accessing COVID-19 data. 
 
-#### New packages are being released all the time, so we'll only cover three of these packages:
+***
+
+#### New packages are being released all the time, so we'll only cover three:
 
 ![](figs/COVID-19-storyboard-pckgs.png){width=100%}
 
+You can install these packages by following the links to their respective websites
 
 - [`covid19R`](https://github.com/Covid19R/covid19R) 
 
@@ -191,6 +184,8 @@ covid19us <- covid19R::get_covid19_dataset(dataset = "covid19us")
 #### Load COVID-19 data from `covid19R` with the `covid19R::get_covid19_dataset()` function. 
 
 The [`covid19R`](https://github.com/Covid19R/covid19R) package attempts to provide complete "*a single package that allows users to access all of the tidy covid-19 datasets collected by data packages that implement the `covid19R` tidy data standard*"
+
+***
 
 For a complete list of the available data, use `covid19R::get_covid19_data_info()`
 
@@ -246,3 +241,14 @@ rmarkdown::paged_table(coronavirus)
 
 - Check out the [data sources](https://ramikrispin.github.io/coronavirus/#data-sources) section for more details about any updates to the `coronavirus` data in this package.
 
+### What if you don't use R?
+
+#### Johns Hopkins' Center for Systems Science and Engineering, The New York Times, The Atlantic, and The Economist each begin collecting and sharing data. All data sources are available on Github as `.csv`/`.tsv` files, or for direct download
+
+![](figs/COVID-19-storyboard-github.png){width=70%}
+
+ - Johns Hopkins' Center for Systems Science and Engineering (CSSE) [COVID-19 Data Repository](https://github.com/CSSEGISandData/COVID-19) compiles many of the data sources in the R packages
+
+ - The New York Times and The Economist each created their own COVID-19 data tracking systems, and each have their respective data repository ([NYT](https://github.com/nytimes/covid-19-data) and [TheEconomist](https://github.com/TheEconomist/covid-19-excess-deaths-tracker)).
+
+ - The Atlantic created [The COVID tracking project](https://covidtracking.com/data) with datasets for direct download.
