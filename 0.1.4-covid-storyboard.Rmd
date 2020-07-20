@@ -10,31 +10,7 @@ output:
 ```{r setup, include=FALSE}
 library(flexdashboard)
 library(tidyverse)
-library(skimr)
 library(socviz)
-library(covdata)
-library(coronavirus)
-library(janitor)
-library(DT)
-library(ggthemes)
-library(brotools)
-library(scales)
-library(leaflet)
-library(plotly)
-library(usmap)
-library(spData)
-library(ggmap)
-library(hrbrthemes)
-library(geofacet)
-library(gganimate)
-library(gifski)
-library(rmapshaper)
-library(sugarbag)
-library(bbplot)
-library(ggthemes)
-library(Rttf2pt1)
-library(extrafontdb)
-library(extrafont)
 library(covid19R)
 library(covdata)
 library(coronavirus)
@@ -49,20 +25,10 @@ knitr::opts_chunk$set(
   message = FALSE,
   warning = FALSE, 
   fig.path = "figs/")
-# knit options ----
-# set theme ----
-ggplot2::theme_set(ggthemes::theme_economist_white(base_size = 10, 
-                                                   gray_bg = FALSE, 
-                                                   horizontal = FALSE,
-                                                   base_family = "Ubuntu"))
 ```
 
 ```{r global, include=FALSE}
-download.file(url = "https://raw.githubusercontent.com/kjhealy/covdata/master/data-raw/DATASET.R", 
-              destfile = "code/DATASET.R")
-source("code/get_corona_tscs.R")
-coronanet <- get_corona_tscs()
-covid19us <- covid19R::get_covid19_dataset(dataset = "covid19us")
+# nothing to load here
 ```
 
 ### January 11th, 2020
@@ -115,7 +81,7 @@ covid19us <- covid19R::get_covid19_dataset(dataset = "covid19us")
 
 ![](figs/whitehouse-covid-public-health-emergency.png){width=70%}
 
-#### The proclamation is [published on the website](https://www.whitehouse.gov/presidential-actions/proclamation-declaring-national-emergency-concerning-novel-coronavirus-disease-covid-19-outbreak/) on March 13th, but the document states the national emergency began on March 1.
+#### The proclamation is [published on the Whitehouse  website](https://www.whitehouse.gov/presidential-actions/proclamation-declaring-national-emergency-concerning-novel-coronavirus-disease-covid-19-outbreak/) on March 13th, but the document states the national emergency began on March 1.
 
 > "*NOW, THEREFORE, I, DONALD J. TRUMP, President of the United States, by the authority vested in me by the Constitution and the laws of the United States of America, including sections 201 and 301 of the National Emergencies Act (50 U.S.C. 1601 et seq.) and consistent with section 1135 of the Social Security Act (SSA), as amended (42 U.S.C. 1320b-5), do hereby find and proclaim that the COVID-19 outbreak in the United States constitutes a national emergency, beginning March 1, 2020.*
 
@@ -168,7 +134,7 @@ covid19us <- covid19R::get_covid19_dataset(dataset = "covid19us")
 
 ![](figs/COVID-19-storyboard-pckgs.png){width=100%}
 
-You can install these packages by following the links to their respective websites
+##### You can install these packages by following the links to their respective websites
 
 - [`covid19R`](https://github.com/Covid19R/covid19R) 
 

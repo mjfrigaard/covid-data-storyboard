@@ -1,4 +1,35 @@
+---
+title: "COVID-19 Data: "
+output: 
+  flexdashboard::flex_dashboard:
+    storyboard: true
+    social: menu
+    source: embed
+---
 
+```{r}
+library(flexdashboard)
+library(tidyverse)
+library(socviz)
+library(covid19R)
+library(covdata)
+library(coronavirus)
+## Global options ----
+# chunk options ----
+knitr::opts_chunk$set(
+  echo = FALSE,
+  cache = FALSE,
+  prompt = FALSE,
+  tidy = FALSE,
+  comment = "#> ",
+  message = FALSE,
+  warning = FALSE, 
+  fig.path = "figs/")
+ggplot2::theme_set(ggthemes::theme_economist_white(base_size = 10, 
+                                                   gray_bg = FALSE, 
+                                                   horizontal = FALSE,
+                                                   base_family = "Ubuntu"))
+```
 ### Checking your COVID-19 data: the `skimr` package
 
 #### We use the [`skimr`](https://docs.ropensci.org/skimr/) package to get a quick high-level view of some summary statistics across the entire dataset. `skimr` is especially helpful are the tiny histograms for continuous variables and the `complete_rate`
@@ -54,6 +85,9 @@ inspectdf::inspect_na(df1 = nytcovcounty,
 ```
 
 ***
+
+
+
 
 ### Check for missing data with [`visdat::vis_miss()`](https://visdat.njtierney.com/)
 
