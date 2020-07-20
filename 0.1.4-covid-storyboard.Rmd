@@ -209,12 +209,16 @@ rmarkdown::paged_table(coronavirus)
 
 ### What if you don't use R?
 
-#### Johns Hopkins' Center for Systems Science and Engineering, The New York Times, The Atlantic, and The Economist each begin collecting and sharing data. All data sources are available on Github as `.csv`/`.tsv` files, or for direct download
+#### Johns Hopkins' Center for Systems Science and Engineering, The New York Times, and The Economist all have data sources which are available on Github as `.csv`/`.tsv` files
 
 ![](figs/COVID-19-storyboard-github.png){width=70%}
 
- - Johns Hopkins' Center for Systems Science and Engineering (CSSE) [COVID-19 Data Repository](https://github.com/CSSEGISandData/COVID-19) compiles many of the data sources in the R packages
+#### The Atlantic created [The COVID tracking project](https://covidtracking.com/data) with datasets for direct download
 
- - The New York Times and The Economist each created their own COVID-19 data tracking systems, and each have their respective data repository ([NYT](https://github.com/nytimes/covid-19-data) and [TheEconomist](https://github.com/TheEconomist/covid-19-excess-deaths-tracker)).
+***
 
- - The Atlantic created [The COVID tracking project](https://covidtracking.com/data) with datasets for direct download.
+ - Johns Hopkins' Center for Systems Science and Engineering (CSSE) [COVID-19 Data Repository](https://github.com/CSSEGISandData/COVID-19) compiles many of the data sources used in the R packages we've covered
+
+ - The New York Times and The Economist each created their own COVID-19 data tracking systems, and each have their respective data repository ([NYT](https://github.com/nytimes/covid-19-data) and [TheEconomist](https://github.com/TheEconomist/covid-19-excess-deaths-tracker))
+
+ 
